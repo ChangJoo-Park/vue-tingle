@@ -1,0 +1,94 @@
+{
+  "name": "vue-tingle",
+  "description": "minimalistic modal for Vue.js",
+  "version": "0.0.1",
+  "author": {
+    "name": "ChangJoo Park",
+    "email": "pcjpcj2@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/changjoo-park/vue-tingle/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-istanbul": "^3.1.2",
+    "babel-polyfill": "6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "buble": "^0.14.0",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.14.1",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-vue": "^2.0.0",
+    "gitbook-cli": "^2.3.0",
+    "html-webpack-plugin": "^2.19.0",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-phantomjs-shim": "^1.4.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.2",
+    "mocha": "^3.2.0",
+    "mocha-loader": "^1.1.1",
+    "phantomjs-prebuilt": "^2.1.14",
+    "power-assert": "^1.4.2",
+    "rollup": "^0.36.4",
+    "rollup-plugin-buble": "^0.14.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "style-loader": "^0.16.1",
+    "uglify-js": "^2.7.5",
+    "vue": "^2.1.10",
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.2.1"
+  },
+  "files": [
+    "dist/vue-tingle.js",
+    "dist/vue-tingle.min.js",
+    "dist/vue-tingle.common.js",
+    "src"
+  ],
+  "homepage": "https://github.com/changjoo-park/vue-tingle#readme",
+  "main": "dist/vue-tingle.common.js",
+  "module": "dist/vue-tingle.esm.js",
+  "unpkg": "dist/vue-tingle.js",
+  "keywords": [
+    "plugin",
+    "vue",
+    "vuejs",
+    "tingle.js",
+    "tingle",
+    "modal",
+    "vanilla"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changjoo-park/vue-tingle.git"
+  },
+  "scripts": {
+    "build": "node config/build.js",
+    "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
+    "dev": "BABEL_ENV=test webpack-dev-server --inline --hot --open --content-base ./test/unit/ --config config/webpack.dev.conf.js",
+    "docs": "gitbook serve ./gitbook ./docs",
+    "docs:build": "node config/version.js && gitbook build ./gitbook ./docs",
+    "docs:install": "gitbook install ./gitbook",
+    "lint": "eslint src test config",
+    "test": "npm run lint && npm run test:cover",
+    "test:cover": "BABEL_ENV=test karma start config/karma.cover.conf.js",
+    "test:unit": "BABEL_ENV=test karma start config/karma.unit.conf.js"
+  },
+  "dependencies": {
+    "tingle.js": "^0.10.0"
+  }
+}
